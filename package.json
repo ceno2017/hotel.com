@@ -6,7 +6,6 @@
   "main": "src/index.js",
   "dependencies": {
     "contentful": "7.9.1",
-    "env-cmd": "10.0.1",
     "react": "16.8.6",
     "react-dom": "16.8.6",
     "react-icons": "3.7.0",
@@ -18,19 +17,10 @@
     "typescript": "3.3.3"
   },
   "scripts": {
-    "start-dev": "env-cmd dev react-scripts start",
-    "build-dev": "env-cmd dev react-scripts build",
-    "start-qa": "env-cmd qa react-scripts start",
-    "build-qa": "env-cmd qa react-scripts build",
-    "start-prod": "env-cmd prod react-scripts start",
-    "build-prod": "env-cmd prod react-scripts build",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ]
+  "browserslist": [">0.2%", "not dead", "not ie <= 11", "not op_mini all"]
 }
