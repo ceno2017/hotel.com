@@ -15,12 +15,14 @@ export default class FeaturedRooms extends React.Component {
     });
 
     return (
-      <section className="featured-rooms">
-        <Title title="featured rooms" />
-        <div className="featured-rooms-center">
-          {loading ? <Loading /> : rooms}
-        </div>
-      </section>
+      <>
+        <section className="featured-rooms">
+          <Title title="featured rooms" />
+          <div className="featured-rooms-center">
+            {loading ? <Loading /> : rooms}
+          </div>
+        </section>
+      </>
     );
   }
 }
