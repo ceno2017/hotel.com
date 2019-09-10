@@ -9,17 +9,18 @@ import {
   FaMailBulk
 } from "react-icons/fa";
 import logo from "../images/logo.png";
-import Anchor from "./Anchor";
+import { Link } from "react-router-dom";
 
 function MyFooterElement() {
   const myState = {
     socials: [
-      [<FaFacebook />, "facebook.com"],
-      [<FaLinkedin />, "linkedIn.com"],
-      [<FaInstagram />, "instagram.com"],
-      [<FaDev />, "getcbt.com.ng"],
-      [<FaPhoneSquare />, ""],
-      [<FaMapMarker />, ""]
+      { icon: <FaFacebook />, url: "facebook.com" },
+      { icon: <FaLinkedin />, url: "linkedIn.com" },
+      { icon: <FaInstagram />, url: "instagram.com" },
+      { icon: <FaDev />, url: "getcbt.com.ng" },
+      { icon: <FaPhoneSquare />, url: "" },
+      { icon: <FaMapMarker />, url: "" },
+      { icon: <FaMailBulk />, url: "" }
     ]
   };
 
@@ -29,7 +30,10 @@ function MyFooterElement() {
   const FaDev = socials.filter(item => item.url === "getcbt.com.ng");
   const phone = socials.find((item, index) => index === 4);
   const MapMarker = socials.find((item, index) => index === 5);
-
+  const fb = socials.find((item, index) => index === 0);
+  const linked = socials.find((item, index) => index === 1);
+  const mail = socials.find((item, index) => index === 6);
+  const instagm = socials.find((item, index) => index === 2);
   return (
     <footer className="footer-distributed">
       <div className="footer-left">
@@ -62,7 +66,7 @@ function MyFooterElement() {
           <p>+234(0)7012585759</p>
         </div>
         <div>
-          <i className={<FaMailBulk />} />
+          <span>{mail.icon}</span>
           <p>
             <a href="mailto:support@eduonix.com">webplan.biz@yahoo.com</a>
           </p>
@@ -74,14 +78,15 @@ function MyFooterElement() {
           We offer training and skill building courses across Technology,
           Design, Management, Science and Humanities.
         </p>
-        <div className="footer-icons">
-          {socials.map((item, index) => {
-            return (
-              <Anchor key={index}>
-                <span>{}</span>
-              </Anchor>
-            );
-          })}
+        <div className="footer-center">
+          <div>
+            <Link to="/">
+              {" "}
+              <span>
+                {instagm.icon} {fb.icon} {linked.icon}
+              </span>
+            </Link>
+          </div>
         </div>
       </div>
     </footer>
